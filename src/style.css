@@ -1,0 +1,730 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', Arial, sans-serif;
+  color: #26382f;
+  background: #f5f7f3;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --vert: #174D36;
+  --vert-clair: #e8efe9;
+  --texte: #26382f;
+  --fond: #f5f7f3;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--fond);
+}
+
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+
+.application {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.entete {
+  height: 76px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-marque {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-symbole {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--vert);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.logo {
+  color: var(--vert);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.logo-baseline {
+  margin-top: 4px;
+  color: #7c887f;
+  font-size: 9px;
+  letter-spacing: 2.2px;
+}
+
+.hero {
+  min-height: 590px;
+  padding: 95px 8%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(13, 43, 30, .88), rgba(13, 43, 30, .45)),
+    url('https://commons.wikimedia.org/wiki/Special:FilePath/PhareBaleines_Aerien2.JPG?width=1800') center 48% / cover;
+}
+
+.hero-contenu {
+  width: min(650px, 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.etiquette, .surtitre {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+}
+
+.etiquette {
+  padding: 9px 13px;
+  border: 1px solid rgba(255, 255, 255, .55);
+  border-radius: 30px;
+}
+
+.hero h1 {
+  margin: 25px 0 18px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(38px, 6vw, 66px);
+  line-height: 1.08;
+  font-weight: 600;
+}
+
+.hero-contenu > p {
+  max-width: 520px;
+  color: rgba(255, 255, 255, .9);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.bouton-principal {
+  min-height: 52px;
+  padding: 14px 23px;
+  border: 0;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  color: white;
+  background: var(--vert);
+  font-size: 14px;
+  font-weight: 700;
+  transition: background .2s, transform .2s;
+}
+
+.bouton-principal:hover {
+  background: #236746;
+  transform: translateY(-1px);
+}
+
+.bouton-principal:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.hero .bouton-principal {
+  margin-top: 22px;
+  color: var(--vert);
+  background: white;
+}
+
+.hero .bouton-principal:hover { background: #edf3ee; }
+
+.hero-infos {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  color: rgba(255, 255, 255, .9);
+  font-size: 12px;
+}
+
+.hero-infos span::before {
+  content: '•';
+  margin-right: 8px;
+  color: #c4d8c9;
+}
+
+.presentation {
+  padding: 85px 8%;
+  text-align: center;
+}
+
+.surtitre { color: #78917f; }
+
+.presentation h2, .panneau h2 {
+  margin: 13px 0;
+  color: var(--vert);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(29px, 4vw, 42px);
+  font-weight: 600;
+}
+
+.presentation > p:not(.surtitre) {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #68746c;
+  line-height: 1.8;
+}
+
+.cartes-avantages {
+  max-width: 1050px;
+  margin: 48px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  text-align: left;
+}
+
+.carte {
+  padding: 27px;
+  border: 1px solid #e3e9e3;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.numero-carte {
+  color: #9aaf9e;
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+}
+
+.carte h3 {
+  margin: 14px 0 8px;
+  color: var(--vert);
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+}
+
+.carte p {
+  margin: 0;
+  color: #6f7a72;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.panneau {
+  width: min(680px, calc(100% - 32px));
+  margin: 45px auto 75px;
+  padding: 38px;
+  border: 1px solid #e4eae4;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 12px 40px rgba(31, 61, 43, .06);
+}
+
+.panneau > p:not(.surtitre):not(.intro-securite) {
+  color: #68746c;
+  line-height: 1.7;
+}
+
+.bouton-retour {
+  margin-bottom: 30px;
+  padding: 0;
+  border: 0;
+  color: var(--vert);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.panneau form { margin-top: 28px; }
+
+.panneau label {
+  display: block;
+  margin: 17px 0 8px;
+  color: #35483b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.panneau input:not([type="checkbox"]):not([type="file"]),
+.panneau select {
+  width: 100%;
+  min-height: 49px;
+  padding: 12px 14px;
+  border: 1px solid #dce4dc;
+  border-radius: 5px;
+  outline: none;
+  color: var(--texte);
+  background: #fbfcfa;
+}
+
+.panneau input:focus, .panneau select:focus {
+  border-color: var(--vert);
+  box-shadow: 0 0 0 3px rgba(23, 77, 54, .09);
+}
+
+.panneau form .bouton-principal {
+  width: 100%;
+  margin-top: 22px;
+}
+
+.prix-equipe {
+  margin-top: 25px;
+  padding: 19px;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 5px;
+  background: var(--vert-clair);
+}
+
+.prix-equipe span {
+  color: var(--vert);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.prix-equipe strong {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  color: var(--vert);
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+}
+
+.prix-equipe small { color: #6f8173; }
+
+.separateur-equipe {
+  margin: 25px 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #9aa59c;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.separateur-equipe::before, .separateur-equipe::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  background: #e5eae5;
+}
+
+.bouton-secondaire {
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid var(--vert);
+  border-radius: 5px;
+  color: var(--vert);
+  background: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.bouton-secondaire:hover { background: var(--vert-clair); }
+
+.code-equipe {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-size: 22px !important;
+  font-weight: 700;
+}
+
+.panneau-bienvenue { width: min(760px, calc(100% - 32px)); }
+
+.panneau-bienvenue h3 {
+  margin: 28px 0 8px;
+  color: var(--vert);
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+}
+
+.texte-bienvenue { font-size: 16px; }
+
+.separateur-bienvenue {
+  height: 1px;
+  margin: 28px 0;
+  background: #e5eae5;
+}
+
+.intro-securite {
+  color: #718076;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.regle-securite {
+  padding: 16px 0;
+  border-bottom: 1px solid #edf0ed;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.numero-regle {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--vert);
+  background: var(--vert-clair);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.regle-securite strong {
+  color: #35483b;
+  font-size: 14px;
+}
+
+.regle-securite p {
+  margin: 5px 0 0;
+  color: #748077;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.rappel-securite {
+  margin: 25px 0;
+  padding: 19px;
+  border-left: 3px solid var(--vert);
+  border-radius: 4px;
+  background: #edf3ee;
+}
+
+.rappel-securite strong { color: var(--vert); }
+
+.rappel-securite p {
+  margin-bottom: 0;
+  color: #5d6e62;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.bloc-localisation {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #e4eae4;
+  border-radius: 7px;
+}
+
+.bloc-localisation h3 { margin-top: 0; }
+
+.bloc-localisation p {
+  color: #718076;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.acceptation-securite {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  margin: 25px 0 !important;
+  font-weight: 500 !important;
+  line-height: 1.5;
+}
+
+.acceptation-securite input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--vert);
+}
+
+.panneau-bienvenue > .bouton-principal { width: 100%; }
+
+/* ÉCRAN DES ÉTAPES : photo visible en arrière-plan */
+.panneau-etape {
+  width: min(760px, calc(100% - 32px));
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,.7);
+  background:
+    linear-gradient(
+      rgba(245, 247, 243, .62),
+      rgba(245, 247, 243, .76)
+    ),
+    var(--photo-etape, #f5f7f3) center / cover fixed;
+  box-shadow: 0 12px 40px rgba(20, 45, 30, .14);
+}
+
+.panneau-etape > * {
+  position: relative;
+}
+
+.panneau-etape h2 {
+  margin: 10px 0;
+  text-shadow: 0 1px 3px rgba(255,255,255,.5);
+}
+
+.panneau-etape > p:not(.surtitre) {
+  line-height: 1.7;
+  text-shadow: 0 1px 3px rgba(255,255,255,.6);
+}
+
+.progression {
+  margin: 15px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #52665a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.progression strong {
+  color: var(--vert);
+  font-size: 13px;
+}
+
+.barre-progression {
+  height: 5px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #e3eae3;
+}
+
+.barre-progression div {
+  width: 0;
+  height: 100%;
+  border-radius: 10px;
+  background: var(--vert);
+  transition: width .3s ease;
+}
+
+.numero-etape {
+  color: #52665a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.lieu-etape {
+  margin: 25px 0;
+  padding: 17px;
+  border: 1px solid rgba(223,232,223,.9);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, .91);
+}
+
+.lieu-picto {
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: var(--vert);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.lieu-etape strong {
+  color: var(--vert);
+  font-size: 13px;
+}
+
+.lieu-etape p {
+  margin: 4px 0 0;
+  color: #718076;
+  font-size: 13px;
+}
+
+.consigne-etape, .bloc-enigme {
+  margin-top: 25px;
+  padding: 23px;
+  border: 1px solid rgba(225,233,225,.95);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 5px 18px rgba(30, 60, 40, .05);
+}
+
+.consigne-etape > strong {
+  color: var(--vert);
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+}
+
+.consigne-etape p {
+  color: #6b796f;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+#message-gps {
+  font-weight: 700;
+  color: var(--vert);
+}
+
+#distance-gps { font-size: 12px; }
+
+.bloc-enigme h3 {
+  margin: 8px 0;
+  color: var(--vert);
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+}
+
+.bloc-enigme > p:not(.surtitre) {
+  color: #5f6e63;
+  line-height: 1.8;
+}
+
+.bloc-enigme form { margin-top: 22px; }
+
+.bloc-enigme .bouton-principal, #etape-suivante {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#zone-photo { margin-top: 20px; }
+
+#zone-photo input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px dashed #b9cbbd;
+  border-radius: 6px;
+  background: #f8faf7;
+}
+
+#apercu-photo {
+  width: 100%;
+  max-height: 300px;
+  margin-top: 15px;
+  border-radius: 7px;
+  object-fit: contain;
+  background: #edf1ed;
+}
+
+.note-test {
+  color: #8a938c !important;
+  font-size: 11px;
+}
+
+#message-reponse {
+  min-height: 20px;
+  margin: 15px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.indice {
+  padding: 12px;
+  border-radius: 5px;
+  color: #6c5b31 !important;
+  background: #f8f2e5;
+  font-size: 13px;
+}
+
+footer {
+  padding: 35px 20px;
+  text-align: center;
+  color: #dce8df;
+  background: var(--vert);
+}
+
+footer strong {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+footer p {
+  margin-bottom: 0;
+  color: #c4d5c9;
+  font-size: 12px;
+}
+
+@media (max-width: 650px) {
+  .entete {
+    height: 65px;
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  .hero {
+    min-height: 570px;
+    padding: 70px 25px;
+    background-position: 57% center;
+  }
+
+  .hero h1 { font-size: 43px; }
+  .hero-contenu > p { font-size: 14px; }
+
+  .hero-infos {
+    gap: 12px;
+    font-size: 10px;
+  }
+
+  .presentation { padding: 60px 22px; }
+
+  .cartes-avantages {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .carte { padding: 22px; }
+
+  .panneau {
+    margin: 22px auto 45px;
+    padding: 24px 20px;
+  }
+
+  .panneau-etape {
+    padding: 22px 17px;
+    background-attachment: scroll;
+  }
+
+  .consigne-etape, .bloc-enigme { padding: 18px; }
+  .panneau-etape h2 { font-size: 31px; }
+}
+/* CARTE DU RALLYE VÉLO POSITIVE */
+.carte-rallye {
+  width: 100%;
+  height: 380px;
+  margin: 20px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #e8eee9;
+  border: 1px solid #174D36;
+}
+
+.carte-rallye p {
+  padding: 20px;
+  text-align: center;
+}
+
+
